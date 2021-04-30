@@ -36,8 +36,8 @@ asv_counts <- read_asv_counts(snakemake@input$counts)
 asv_tax    <- read_asv_tax(snakemake@input$tax)
 # sample metadata
 meta       <- read_meta(snakemake@input$meta)
-meta$ConcLabel <- sapply(meta[,"ng/microl"], function(x){ ifelse(x=="< 1",x,">= 1") })
-meta$Ctrl      <- sapply(rownames(meta), function(x){ ifelse(grepl("^CTRL", x), "Control", "Sample") })
+# meta$ConcLabel <- sapply(meta[,"ng/microl"], function(x){ ifelse(x=="< 1",x,">= 1") })
+meta$Ctrl      <- sapply(rownames(meta), function(x){ ifelse(grepl("^VIP", x), "VIP", "VPAC") })
 print(head(meta, 30))
 
 # phyloseq object
@@ -142,7 +142,7 @@ plots$ord_samples_site <-
         asv_ph_norm,
         asv_ph_norm_ord,
         type="samples",
-        color="Site"
+        color="group"
     ) +
     geom_point(size=2) +
     geom_text_repel(
@@ -164,7 +164,7 @@ plots$ord_samples_site <-
 
 plots$ord_samples_site_split <-
     plots$ord_samples_site +
-    facet_wrap(~Site) +
+    facet_wrap(~group) +
     theme(
         legend.position="none"
     )
@@ -174,7 +174,7 @@ plots$ord_samples_source <-
         asv_ph_norm,
         asv_ph_norm_ord,
         type="samples",
-        color="Source"
+        color="genotype"
     ) +
     geom_point(size=2) +
     geom_text_repel(
@@ -196,7 +196,7 @@ plots$ord_samples_source <-
 
 plots$ord_samples_source_split <-
     plots$ord_samples_source +
-    facet_wrap(~Source) +
+    facet_wrap(~genotype) +
     theme(
         legend.position="none"
     )
@@ -208,12 +208,12 @@ plot_df <- phyloseq::plot_ordination(
     justDF=TRUE
 )
 plots$ord_samples_source2 <-
-    ggplot(data=plot_df, aes(x=DCA1, y=DCA2, color=Source, shape=ConcLabel)) +
+    ggplot(data=plot_df, aes(x=DCA1, y=DCA2, color=group, shape=genotype)) +
     geom_point(size=2) +
-    scale_shape_manual(values=META_SHAPE$ConcLabel) +
+#    scale_shape_manual(values=META_SHAPE$genotype) +
     scale_color_d3() +
     geom_text_repel(
-        data=plot_df[plot_df$Ctrl == "Control",],
+        data=plot_df[plot_df$Ctrl == "VPAC",],
         aes(label=sampleID),
         max.overlaps=Inf,
         min.segment.length=0,
@@ -230,7 +230,7 @@ plots$ord_samples_source2 <-
         axis.text=element_blank()
     )
 
-plots$ord_samples_source2_split <- plots$ord_samples_source2 + facet_wrap(~Source)
+plots$ord_samples_source2_split <- plots$ord_samples_source2 + facet_wrap(~group)
 
 ## PDF
 pdf(snakemake@output$pdf, width=16, height=9)

@@ -36,14 +36,15 @@ rule cutadapt_primers:
         primer_f=config["primer"]["forward"],
         primer_r_rc=config["primer"]["reverse_revcompl"],
         primer_r=config["primer"]["reverse"],
-        primer_f_rc=config["primer"]["forward_revcompl"]
+        primer_f_rc=config["primer"]["forward_revcompl"],
+        min_length=config["cutadapt"]["min_length"]
     conda:
         os.path.join(ENV_DIR, "cutadapt.yaml")
     message:
         "Cutadapt: {wildcards.sid}"
     shell:
         # parameters: see wiki for details
-        "cutadapt -j {threads} --quality-cutoff 25 --trim-n --minimum-length 275 --pair-filter=any "
+        "cutadapt -j {threads} --quality-cutoff 25 --trim-n --minimum-length {params.min_length} --pair-filter=any "
         "-a '{params.primer_f}...{params.primer_r_rc}' -A '{params.primer_r}...{params.primer_f_rc}' "
         "-o {output.r1} -p {output.r2} {input.r1} {input.r2} &> {log}"
 
@@ -64,14 +65,15 @@ rule cutadapt_adapters:
         forward1=config["adapter"]["forward1"],
         forward2=config["adapter"]["forward2"],
         revcompl1=config["adapter"]["revcompl1"],
-        revcompl2=config["adapter"]["revcompl2"]
+        revcompl2=config["adapter"]["revcompl2"],
+        min_length=config["cutadapt"]["min_length"]
     conda:
         os.path.join(ENV_DIR, "cutadapt.yaml")
     message:
         "Cutadapt: {wildcards.sid}"
     shell:
         # parameters: see wiki for details
-        "cutadapt -j {threads} --quality-cutoff 25 --max-n 0 --minimum-length 275 --pair-filter=any "
+        "cutadapt -j {threads} --quality-cutoff 25 --max-n 0 --minimum-length {params.min_length} --pair-filter=any "
         "-b '{params.forward1}' -b '{params.forward2}' -b '{params.revcompl1}' -b '{params.revcompl2}' -B '{params.forward1}' -B '{params.forward2}' -B '{params.revcompl1}' -B '{params.revcompl2}' "
         "-o {output.r1} -p {output.r2} {input.r1} {input.r2} &> {log}"
 

@@ -9,9 +9,10 @@
 #SBATCH -p batch
 #SBATCH --qos=normal
 
-SMK_JOBS=${SLURM_CPUS_PER_TASK:-1} # get from slurm or set to 1
+# SMK_JOBS=${SLURM_CPUS_PER_TASK:-1} # get from slurm or set to 1
+SMK_JOBS=48
 SMK_ENV="snakemake" # snakemake conda env (see requirements.yaml)
-SMK_PRF="/mnt/data/sbusi/vip" # snakemake conda prefix
+SMK_PRF="/mnt/data/sbusi/vip/conda" # snakemake conda prefix
 SMK_CONFIG="config/config.yaml" # sankemake config file
 
 # Checks

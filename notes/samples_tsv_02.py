@@ -16,4 +16,4 @@ df_merged = df1.merge(
     right_index=True
 )
 
-df_merged.to_csv("config/samples_metadta.tsv", sep="\t", na_rep='NA', header=True, index=True, index_label="Sample")
+df_merged.to_csv("config/samples_metadata.tsv", sep="\t", na_rep='NA', header=True, index=True, index_label="Sample")

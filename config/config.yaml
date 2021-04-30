@@ -5,7 +5,7 @@ workdir: "/mnt/data/sbusi/vip"
 dbsdir: "/mnt/data/sbusi/vip"
 
 # samples: unique sample ID and R1/R2 FASTQ files (absolute paths)
-samples: "config/samples.tsv"
+samples: "config/samples_metadata.tsv"
 
 # primer sequences
 primer:
@@ -27,7 +27,8 @@ fastqc:
 
 # https://cutadapt.readthedocs.io/en/stable/
 cutadapt:
-  threads: 2
+  threads: 4
+  min_length: 200
 
 # https://www.bioconductor.org/packages/release/bioc/html/dada2.html
 dada2:
@@ -36,8 +37,8 @@ dada2:
   #   truncLen: [0, 287]
   #   minLen: 275
   asv:
-    threads_single: 3
-    threads: 15
+    threads_single: 1
+    threads: 5
     pool: true # TRUE or pseudo  # TODO
     minOverlap: 31  # see wiki for details
     # https://zenodo.org/record/1172783#.XlZ__CmYXMJ (SILVA v.132)
