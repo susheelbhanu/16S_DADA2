@@ -1,13 +1,11 @@
 # 16S_DADA2
 # About
 
-This repository can be used for the analyses of 16S sequencing data via `DADA2` using a `snakemake` workflow
-
-See the wiki for more details.
+- This repository can be used for the analyses of 16S sequencing data via `DADA2` using a `snakemake` workflow
 
 # Set up
 
-You might want to adjust some settings in the files `config/sbatch.sh` and `config/config.yaml`, e.g.
+- You might want to adjust some settings in the files `config/sbatch.sh` and `config/config.yaml`, e.g.
 the name of the `snakemake` `conda` environment, paths and number of cores/threads.
 
 ## Conda
