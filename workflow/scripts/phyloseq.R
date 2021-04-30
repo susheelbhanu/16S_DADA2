@@ -135,7 +135,7 @@ plots$ord_asvs <-
 
 plots$ord_asvs_split <-
     plots$ord_asvs +
-#    facet_wrap(~Phylum) +
+    facet_wrap(~Phylum) +
     theme(
         legend.position="none"
     )
@@ -167,7 +167,7 @@ plots$ord_samples_site <-
 
 plots$ord_samples_site_split <-
     plots$ord_samples_site +
-#    facet_wrap(~group) +
+    facet_wrap(~group) +
     theme(
         legend.position="none"
     )
@@ -199,7 +199,7 @@ plots$ord_samples_source <-
 
 plots$ord_samples_source_split <-
     plots$ord_samples_source +
-#    facet_wrap(~genotype) +
+    facet_wrap(~genotype) +
     theme(
         legend.position="none"
     )
@@ -233,8 +233,8 @@ plots$ord_samples_source2 <-
         axis.text=element_blank()
     )
 
-# plots$ord_samples_source2_split <- plots$ord_samples_source2 + facet_wrap(~group)
-plots$ord_samples_source2_split <- plots$ord_samples_source2 
+plots$ord_samples_source2_split <- plots$ord_samples_source2 + facet_wrap(~group)
+# plots$ord_samples_source2_split <- plots$ord_samples_source2 
 
 ## PDF
 pdf(snakemake@output$pdf, width=16, height=9)
