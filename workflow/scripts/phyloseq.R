@@ -216,7 +216,7 @@ plots$ord_samples_source2 <-
 #    scale_shape_manual(values=META_SHAPE$genotype) +
     scale_color_d3() +
     geom_text_repel(
-        data=plot_df[plot_df$Ctrl == "VPAC",],
+        data=plot_df[plot_df$group == "VPAC2",],
         aes(label=sampleID),
         max.overlaps=Inf,
         min.segment.length=0,
