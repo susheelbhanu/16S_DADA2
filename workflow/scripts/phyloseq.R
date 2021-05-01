@@ -93,6 +93,20 @@ plots$alphadiv <-
 
 # barplots: 
 # NOTE: skipped - too many samples and ASVs/taxa
+carbom_group <- merge_samples(asv_ph_norm, "group")
+plots$group_barplot <- plot_bar(carbom_group, fill = "Phylum") +
+  geom_bar(aes(color=Phylum, fill=Phylum), stat="identity", position="stack") +
+  custom_theme + theme(
+    axis.text.x=element_text(angle=90, hjust=1, vjust=0.5, size=6)
+  )
+
+carbom_genotype <- merge_samples(asv_ph_norm, "genotype")
+plots$genotype_barplot <- plot_bar(carbom_genotype, fill = "Phylum") +
+  geom_bar(aes(color=Phylum, fill=Phylum), stat="identity", position="stack") +
+  custom_theme + theme(
+    axis.text.x=element_text(angle=90, hjust=1, vjust=0.5, size=6)
+  )
+
 
 # heatmap
 plots$heatmap <-
@@ -235,6 +249,11 @@ plots$ord_samples_source2 <-
 
 plots$ord_samples_source2_split <- plots$ord_samples_source2 + facet_wrap(~group)
 # plots$ord_samples_source2_split <- plots$ord_samples_source2 
+
+# Simple Network
+carbom_abund <- filter_taxa(asv_ph_norm, function(x) sum(x > counts_median*0.20) > 0, TRUE)
+plots$network <- plot_net(carbom_abund, distance = "(A+B-2*J)/(A+B)", type = "taxa",
+         laymeth="circle", maxdist = 0.8, color="Phylum", point_label="Genus")
 
 ## PDF
 pdf(snakemake@output$pdf, width=16, height=9)
