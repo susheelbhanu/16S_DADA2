@@ -1,0 +1,3 @@
+WildcardError in line 54 of /mnt/data/sbusi/rashi_MG/libprep_analyses/workflow/Snakefile:
+No values given for wildcard 'sid'.
+  File "/mnt/data/sbusi/rashi_MG/libprep_analyses/workflow/Snakefile", line 54, in <module>

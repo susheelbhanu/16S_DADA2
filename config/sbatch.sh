@@ -30,4 +30,4 @@ fi
 
 # snakemake -s workflow/Snakefile -rpn --jobs 1 --local-cores 1 --unlock --configfile "${SMK_CONFIG}"
 snakemake -s workflow/Snakefile -rp --jobs ${SMK_JOBS} --local-cores 1 --rerun-incomplete \
---configfile "${SMK_CONFIG}" --use-conda --conda-prefix ${SMK_PRF}
+--configfile "${SMK_CONFIG}" --use-conda --conda-prefix ${SMK_PRF} --forceall

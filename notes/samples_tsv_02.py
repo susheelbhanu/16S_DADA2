@@ -1,5 +1,5 @@
 # NOTE: 2021.02.19
-#  How new sample metadata was added to sampels.tsv (issue #2, after commit 2f95b929)
+#  How new sample metadata was added to samples.tsv (issue #2, after commit 2f95b929)
 
 import pandas
 

@@ -12,13 +12,13 @@
 #done >> config/samples.tsv
 
 
-for file in /mnt/data/sbusi/vip/data/fastq/*.gz
-do 
+for file in /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/*.gz
+do
     echo $file
 done | paste - - | awk '{print $0=$1"\t"$1"\t"$2}' | \
-    awk -v "OFS=\t" '{$1=$1;sub(/^.*MB/,"MB",$1); print}' | \
+    awk -v "OFS=\t" '{$1=$1;sub(/_SP.*/,"",$1); print}' | \
     awk -v OFS="\t" '{ split($1, arr, "_"); $1=arr[1]"_"arr[2] }1' | \
-    awk -v "OFS=\t" '{$1=$1;sub("_","-",$1); print}' | \
+    awk -v "OFS=\t" '{$1=$1;sub("\/mnt\/esb-storage-01\/NOMIS\/rashi_MG\/fastq\/","",$1); print}' | \
     sed $'1 i\\\nSample\tR1\tR2' > config/samples.tsv
 
 # 2021.02.19: update (issue #2)

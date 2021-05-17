@@ -1,0 +1,697 @@
+Building DAG of jobs...
+Creating conda environment libprep_analyses/workflow/envs/kraken2.yaml...
+Downloading remote packages.
+Environment for libprep_analyses/workflow/envs/kraken2.yaml created (location: ../vip/conda/6e1ebaaa)
+Using shell: /usr/bin/bash
+Provided cores: 48
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	6	KRAKEN2
+	1	all
+	6	cutadapt_adapters
+	6	cutadapt_primers
+	36	fastqc
+	6	link_fastq
+	2	multiqc_cutadapt
+	3	multiqc_fastqc
+	66
+
+[Fri May 14 22:51:23 2021]
+localrule link_fastq:
+    input: /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIFecal2_SP_S5_R1_001.fastq.gz, /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIFecal2_SP_S5_R2_001.fastq.gz
+    output: fastq/raw/1QIFecal2_R1.fastq.gz, fastq/raw/1QIFecal2_R2.fastq.gz
+    jobid: 61
+    reason: Missing output files: fastq/raw/1QIFecal2_R1.fastq.gz, fastq/raw/1QIFecal2_R2.fastq.gz
+    wildcards: sid=1QIFecal2
+
+ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIFecal2_SP_S5_R1_001.fastq.gz) fastq/raw/1QIFecal2_R1.fastq.gz && ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIFecal2_SP_S5_R2_001.fastq.gz) fastq/raw/1QIFecal2_R2.fastq.gz
+
+[Fri May 14 22:51:23 2021]
+localrule link_fastq:
+    input: /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QILAO_SP_S4_R1_001.fastq.gz, /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QILAO_SP_S4_R2_001.fastq.gz
+    output: fastq/raw/2QILAO_R1.fastq.gz, fastq/raw/2QILAO_R2.fastq.gz
+    jobid: 65
+    reason: Missing output files: fastq/raw/2QILAO_R2.fastq.gz, fastq/raw/2QILAO_R1.fastq.gz
+    wildcards: sid=2QILAO
+
+ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QILAO_SP_S4_R1_001.fastq.gz) fastq/raw/2QILAO_R1.fastq.gz && ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QILAO_SP_S4_R2_001.fastq.gz) fastq/raw/2QILAO_R2.fastq.gz
+
+[Fri May 14 22:51:23 2021]
+localrule link_fastq:
+    input: /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIFecal2_SP_S6_R1_001.fastq.gz, /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIFecal2_SP_S6_R2_001.fastq.gz
+    output: fastq/raw/2QIFecal2_R1.fastq.gz, fastq/raw/2QIFecal2_R2.fastq.gz
+    jobid: 63
+    reason: Missing output files: fastq/raw/2QIFecal2_R1.fastq.gz, fastq/raw/2QIFecal2_R2.fastq.gz
+    wildcards: sid=2QIFecal2
+
+ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIFecal2_SP_S6_R1_001.fastq.gz) fastq/raw/2QIFecal2_R1.fastq.gz && ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIFecal2_SP_S6_R2_001.fastq.gz) fastq/raw/2QIFecal2_R2.fastq.gz
+
+[Fri May 14 22:51:23 2021]
+localrule link_fastq:
+    input: /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QILAO_SP_S3_R1_001.fastq.gz, /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QILAO_SP_S3_R2_001.fastq.gz
+    output: fastq/raw/1QILAO_R1.fastq.gz, fastq/raw/1QILAO_R2.fastq.gz
+    jobid: 62
+    reason: Missing output files: fastq/raw/1QILAO_R2.fastq.gz, fastq/raw/1QILAO_R1.fastq.gz
+    wildcards: sid=1QILAO
+
+ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QILAO_SP_S3_R1_001.fastq.gz) fastq/raw/1QILAO_R1.fastq.gz && ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QILAO_SP_S3_R2_001.fastq.gz) fastq/raw/1QILAO_R2.fastq.gz
+
+[Fri May 14 22:51:23 2021]
+localrule link_fastq:
+    input: /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIMock_SP_S1_R1_001.fastq.gz, /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIMock_SP_S1_R2_001.fastq.gz
+    output: fastq/raw/1QIMock_R1.fastq.gz, fastq/raw/1QIMock_R2.fastq.gz
+    jobid: 60
+    reason: Missing output files: fastq/raw/1QIMock_R2.fastq.gz, fastq/raw/1QIMock_R1.fastq.gz
+    wildcards: sid=1QIMock
+[Fri May 14 22:51:23 2021]
+
+Finished job 61.
+ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIMock_SP_S1_R1_001.fastq.gz) fastq/raw/1QIMock_R1.fastq.gz && ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/1QIMock_SP_S1_R2_001.fastq.gz) fastq/raw/1QIMock_R2.fastq.gz
+1 of 66 steps (2%) done
+
+[Fri May 14 22:51:23 2021]
+localrule link_fastq:
+    input: /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIMock_SP_S2_R1_001.fastq.gz, /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIMock_SP_S2_R2_001.fastq.gz
+    output: fastq/raw/2QIMock_R1.fastq.gz, fastq/raw/2QIMock_R2.fastq.gz
+    jobid: 64
+    reason: Missing output files: fastq/raw/2QIMock_R1.fastq.gz, fastq/raw/2QIMock_R2.fastq.gz
+    wildcards: sid=2QIMock
+
+ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIMock_SP_S2_R1_001.fastq.gz) fastq/raw/2QIMock_R1.fastq.gz && ln -sf $(realpath /mnt/esb-storage-01/NOMIS/rashi_MG/fastq/2QIMock_SP_S2_R2_001.fastq.gz) fastq/raw/2QIMock_R2.fastq.gz
+[Fri May 14 22:51:23 2021]
+Finished job 65.
+2 of 66 steps (3%) done
+[Fri May 14 22:51:23 2021]
+Finished job 63.
+3 of 66 steps (5%) done
+[Fri May 14 22:51:23 2021]
+Finished job 62.
+4 of 66 steps (6%) done
+[Fri May 14 22:51:23 2021]
+Finished job 60.
+5 of 66 steps (8%) done
+
+[Fri May 14 22:51:23 2021]
+Job 36: FastQC: fastq/raw/2QIFecal2_R1.fastq.gz
+Reason: Missing output files: fastqc/raw/2QIFecal2_R1_fastqc.zip; Input files updated by another job: fastq/raw/2QIFecal2_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/2QIFecal2_R1_fastqc.zip) fastq/raw/2QIFecal2_R1.fastq.gz &> fastqc/raw/2QIFecal2_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:23 2021]
+Job 40: FastQC: fastq/raw/1QIFecal2_R2.fastq.gz
+Reason: Missing output files: fastqc/raw/1QIFecal2_R2_fastqc.zip; Input files updated by another job: fastq/raw/1QIFecal2_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/1QIFecal2_R2_fastqc.zip) fastq/raw/1QIFecal2_R2.fastq.gz &> fastqc/raw/1QIFecal2_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:23 2021]
+Job 13: Cutadapt: 1QIFecal2
+Reason: Missing output files: fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz, fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz; Input files updated by another job: fastq/raw/1QIFecal2_R1.fastq.gz, fastq/raw/1QIFecal2_R2.fastq.gz
+
+[Fri May 14 22:51:23 2021]
+cutadapt -j 4 --quality-cutoff 25 --trim-n --minimum-length 100 --pair-filter=any -a 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG...GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC' -A 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC...CTGCWGCCNCCCGTAGGCTGTCTCTTATACACATCTGACGCTGCCGACGA' -o fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz -p fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz fastq/raw/1QIFecal2_R1.fastq.gz fastq/raw/1QIFecal2_R2.fastq.gz &> fastq/cutadapt_primers/1QIFecal2.log
+Finished job 64.
+6 of 66 steps (9%) done
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 22:51:23 2021]
+Job 38: FastQC: fastq/raw/2QILAO_R1.fastq.gz
+Reason: Missing output files: fastqc/raw/2QILAO_R1_fastqc.zip; Input files updated by another job: fastq/raw/2QILAO_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/2QILAO_R1_fastqc.zip) fastq/raw/2QILAO_R1.fastq.gz &> fastqc/raw/2QILAO_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 44: FastQC: fastq/raw/1QIFecal2_R1.fastq.gz
+Reason: Missing output files: fastqc/raw/1QIFecal2_R1_fastqc.zip; Input files updated by another job: fastq/raw/1QIFecal2_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/1QIFecal2_R1_fastqc.zip) fastq/raw/1QIFecal2_R1.fastq.gz &> fastqc/raw/1QIFecal2_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 17: Cutadapt: 2QILAO
+Reason: Missing output files: fastq/cutadapt_primers/2QILAO_R2.fastq.gz, fastq/cutadapt_primers/2QILAO_R1.fastq.gz; Input files updated by another job: fastq/raw/2QILAO_R2.fastq.gz, fastq/raw/2QILAO_R1.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --trim-n --minimum-length 100 --pair-filter=any -a 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG...GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC' -A 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC...CTGCWGCCNCCCGTAGGCTGTCTCTTATACACATCTGACGCTGCCGACGA' -o fastq/cutadapt_primers/2QILAO_R1.fastq.gz -p fastq/cutadapt_primers/2QILAO_R2.fastq.gz fastq/raw/2QILAO_R1.fastq.gz fastq/raw/2QILAO_R2.fastq.gz &> fastq/cutadapt_primers/2QILAO.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 22:51:24 2021]
+Job 43: FastQC: fastq/raw/2QILAO_R2.fastq.gz
+Reason: Missing output files: fastqc/raw/2QILAO_R2_fastqc.zip; Input files updated by another job: fastq/raw/2QILAO_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/2QILAO_R2_fastqc.zip) fastq/raw/2QILAO_R2.fastq.gz &> fastqc/raw/2QILAO_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 45: FastQC: fastq/raw/1QILAO_R2.fastq.gz
+Reason: Missing output files: fastqc/raw/1QILAO_R2_fastqc.zip; Input files updated by another job: fastq/raw/1QILAO_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/1QILAO_R2_fastqc.zip) fastq/raw/1QILAO_R2.fastq.gz &> fastqc/raw/1QILAO_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 15: Cutadapt: 2QIFecal2
+Reason: Missing output files: fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz, fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz; Input files updated by another job: fastq/raw/2QIFecal2_R1.fastq.gz, fastq/raw/2QIFecal2_R2.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --trim-n --minimum-length 100 --pair-filter=any -a 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG...GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC' -A 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC...CTGCWGCCNCCCGTAGGCTGTCTCTTATACACATCTGACGCTGCCGACGA' -o fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz -p fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz fastq/raw/2QIFecal2_R1.fastq.gz fastq/raw/2QIFecal2_R2.fastq.gz &> fastq/cutadapt_primers/2QIFecal2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 22:51:24 2021]
+Job 41: FastQC: fastq/raw/2QIFecal2_R2.fastq.gz
+Reason: Missing output files: fastqc/raw/2QIFecal2_R2_fastqc.zip; Input files updated by another job: fastq/raw/2QIFecal2_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/2QIFecal2_R2_fastqc.zip) fastq/raw/2QIFecal2_R2.fastq.gz &> fastqc/raw/2QIFecal2_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 14: Cutadapt: 1QILAO
+Reason: Missing output files: fastq/cutadapt_primers/1QILAO_R2.fastq.gz, fastq/cutadapt_primers/1QILAO_R1.fastq.gz; Input files updated by another job: fastq/raw/1QILAO_R2.fastq.gz, fastq/raw/1QILAO_R1.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --trim-n --minimum-length 100 --pair-filter=any -a 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG...GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC' -A 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC...CTGCWGCCNCCCGTAGGCTGTCTCTTATACACATCTGACGCTGCCGACGA' -o fastq/cutadapt_primers/1QILAO_R1.fastq.gz -p fastq/cutadapt_primers/1QILAO_R2.fastq.gz fastq/raw/1QILAO_R1.fastq.gz fastq/raw/1QILAO_R2.fastq.gz &> fastq/cutadapt_primers/1QILAO.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 22:51:24 2021]
+Job 37: FastQC: fastq/raw/1QILAO_R1.fastq.gz
+Reason: Missing output files: fastqc/raw/1QILAO_R1_fastqc.zip; Input files updated by another job: fastq/raw/1QILAO_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/1QILAO_R1_fastqc.zip) fastq/raw/1QILAO_R1.fastq.gz &> fastqc/raw/1QILAO_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 39: FastQC: fastq/raw/1QIMock_R2.fastq.gz
+Reason: Missing output files: fastqc/raw/1QIMock_R2_fastqc.zip; Input files updated by another job: fastq/raw/1QIMock_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/1QIMock_R2_fastqc.zip) fastq/raw/1QIMock_R2.fastq.gz &> fastqc/raw/1QIMock_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:24 2021]
+Job 46: FastQC: fastq/raw/2QIMock_R1.fastq.gz
+Reason: Missing output files: fastqc/raw/2QIMock_R1_fastqc.zip; Input files updated by another job: fastq/raw/2QIMock_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/2QIMock_R1_fastqc.zip) fastq/raw/2QIMock_R1.fastq.gz &> fastqc/raw/2QIMock_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:25 2021]
+Job 12: Cutadapt: 1QIMock
+Reason: Missing output files: fastq/cutadapt_primers/1QIMock_R2.fastq.gz, fastq/cutadapt_primers/1QIMock_R1.fastq.gz; Input files updated by another job: fastq/raw/1QIMock_R2.fastq.gz, fastq/raw/1QIMock_R1.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --trim-n --minimum-length 100 --pair-filter=any -a 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG...GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC' -A 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC...CTGCWGCCNCCCGTAGGCTGTCTCTTATACACATCTGACGCTGCCGACGA' -o fastq/cutadapt_primers/1QIMock_R1.fastq.gz -p fastq/cutadapt_primers/1QIMock_R2.fastq.gz fastq/raw/1QIMock_R1.fastq.gz fastq/raw/1QIMock_R2.fastq.gz &> fastq/cutadapt_primers/1QIMock.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 22:51:25 2021]
+Job 47: FastQC: fastq/raw/1QIMock_R1.fastq.gz
+Reason: Missing output files: fastqc/raw/1QIMock_R1_fastqc.zip; Input files updated by another job: fastq/raw/1QIMock_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/1QIMock_R1_fastqc.zip) fastq/raw/1QIMock_R1.fastq.gz &> fastqc/raw/1QIMock_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 22:51:25 2021]
+Job 16: Cutadapt: 2QIMock
+Reason: Missing output files: fastq/cutadapt_primers/2QIMock_R1.fastq.gz, fastq/cutadapt_primers/2QIMock_R2.fastq.gz; Input files updated by another job: fastq/raw/2QIMock_R1.fastq.gz, fastq/raw/2QIMock_R2.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --trim-n --minimum-length 100 --pair-filter=any -a 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG...GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC' -A 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC...CTGCWGCCNCCCGTAGGCTGTCTCTTATACACATCTGACGCTGCCGACGA' -o fastq/cutadapt_primers/2QIMock_R1.fastq.gz -p fastq/cutadapt_primers/2QIMock_R2.fastq.gz fastq/raw/2QIMock_R1.fastq.gz fastq/raw/2QIMock_R2.fastq.gz &> fastq/cutadapt_primers/2QIMock.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 22:51:25 2021]
+Job 42: FastQC: fastq/raw/2QIMock_R2.fastq.gz
+Reason: Missing output files: fastqc/raw/2QIMock_R2_fastqc.zip; Input files updated by another job: fastq/raw/2QIMock_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/raw/2QIMock_R2_fastqc.zip) fastq/raw/2QIMock_R2.fastq.gz &> fastqc/raw/2QIMock_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 22:58:39 2021]
+Finished job 38.
+7 of 66 steps (11%) done
+[Fri May 14 22:58:55 2021]
+Finished job 44.
+8 of 66 steps (12%) done
+[Fri May 14 22:58:56 2021]
+Finished job 40.
+9 of 66 steps (14%) done
+[Fri May 14 22:58:56 2021]
+Finished job 37.
+10 of 66 steps (15%) done
+[Fri May 14 22:58:58 2021]
+Finished job 43.
+11 of 66 steps (17%) done
+[Fri May 14 22:59:06 2021]
+Finished job 45.
+12 of 66 steps (18%) done
+[Fri May 14 23:00:58 2021]
+Finished job 41.
+13 of 66 steps (20%) done
+[Fri May 14 23:01:04 2021]
+Finished job 46.
+14 of 66 steps (21%) done
+[Fri May 14 23:01:08 2021]
+Finished job 36.
+15 of 66 steps (23%) done
+[Fri May 14 23:01:13 2021]
+Finished job 42.
+16 of 66 steps (24%) done
+[Fri May 14 23:01:22 2021]
+Finished job 47.
+17 of 66 steps (26%) done
+[Fri May 14 23:01:24 2021]
+Finished job 39.
+18 of 66 steps (27%) done
+
+[Fri May 14 23:01:24 2021]
+Job 7: MultiQC (FastQC): raw
+Reason: Missing output files: multiqc/fastqc/raw/multiqc_report.html; Input files updated by another job: fastqc/raw/2QIFecal2_R1_fastqc.zip, fastqc/raw/1QILAO_R1_fastqc.zip, fastqc/raw/2QILAO_R1_fastqc.zip, fastqc/raw/1QIMock_R2_fastqc.zip, fastqc/raw/1QIFecal2_R2_fastqc.zip, fastqc/raw/2QIFecal2_R2_fastqc.zip, fastqc/raw/2QIMock_R2_fastqc.zip, fastqc/raw/2QILAO_R2_fastqc.zip, fastqc/raw/1QIFecal2_R1_fastqc.zip, fastqc/raw/1QILAO_R2_fastqc.zip, fastqc/raw/2QIMock_R1_fastqc.zip, fastqc/raw/1QIMock_R1_fastqc.zip
+
+multiqc --interactive -p -f -m fastqc -o $(dirname multiqc/fastqc/raw/multiqc_report.html) $(dirname fastqc/raw/1QIFecal2_R1_fastqc.zip) &> multiqc/fastqc/raw/multiqc.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/91d78c4a
+[Fri May 14 23:01:37 2021]
+Finished job 7.
+19 of 66 steps (29%) done
+[Fri May 14 23:09:30 2021]
+Finished job 17.
+20 of 66 steps (30%) done
+
+[Fri May 14 23:09:30 2021]
+Job 24: FastQC: fastq/cutadapt_primers/2QILAO_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/2QILAO_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/2QILAO_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/2QILAO_R2_fastqc.zip) fastq/cutadapt_primers/2QILAO_R2.fastq.gz &> fastqc/cutadapt_primers/2QILAO_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:09:31 2021]
+Job 29: FastQC: fastq/cutadapt_primers/2QILAO_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/2QILAO_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/2QILAO_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/2QILAO_R1_fastqc.zip) fastq/cutadapt_primers/2QILAO_R1.fastq.gz &> fastqc/cutadapt_primers/2QILAO_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:09:31 2021]
+Job 21: Cutadapt: 2QILAO
+Reason: Missing output files: fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz; Input files updated by another job: fastq/cutadapt_primers/2QILAO_R2.fastq.gz, fastq/cutadapt_primers/2QILAO_R1.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --max-n 0 --minimum-length 100 --pair-filter=any -b 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -b 'AGATCGGAAGAG' -b 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -b 'CTCTTCCGATCT' -B 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -B 'AGATCGGAAGAG' -B 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -B 'CTCTTCCGATCT' -o fastq/cutadapt_adapters/2QILAO_R1.fastq.gz -p fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_primers/2QILAO_R1.fastq.gz fastq/cutadapt_primers/2QILAO_R2.fastq.gz &> fastq/cutadapt_adapters/2QILAO.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+[Fri May 14 23:10:12 2021]
+Finished job 13.
+21 of 66 steps (32%) done
+
+[Fri May 14 23:10:12 2021]
+Job 31: FastQC: fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/1QIFecal2_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/1QIFecal2_R1_fastqc.zip) fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz &> fastqc/cutadapt_primers/1QIFecal2_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:10:12 2021]
+Job 22: Cutadapt: 1QIFecal2
+Reason: Missing output files: fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz; Input files updated by another job: fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz, fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --max-n 0 --minimum-length 100 --pair-filter=any -b 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -b 'AGATCGGAAGAG' -b 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -b 'CTCTTCCGATCT' -B 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -B 'AGATCGGAAGAG' -B 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -B 'CTCTTCCGATCT' -o fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz -p fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz &> fastq/cutadapt_adapters/1QIFecal2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 23:10:12 2021]
+Job 32: FastQC: fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/1QIFecal2_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/1QIFecal2_R2_fastqc.zip) fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz &> fastqc/cutadapt_primers/1QIFecal2_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:10:14 2021]
+Finished job 14.
+22 of 66 steps (33%) done
+
+[Fri May 14 23:10:14 2021]
+Job 25: FastQC: fastq/cutadapt_primers/1QILAO_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/1QILAO_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/1QILAO_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/1QILAO_R2_fastqc.zip) fastq/cutadapt_primers/1QILAO_R2.fastq.gz &> fastqc/cutadapt_primers/1QILAO_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:10:14 2021]
+Job 23: Cutadapt: 1QILAO
+Reason: Missing output files: fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz; Input files updated by another job: fastq/cutadapt_primers/1QILAO_R2.fastq.gz, fastq/cutadapt_primers/1QILAO_R1.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --max-n 0 --minimum-length 100 --pair-filter=any -b 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -b 'AGATCGGAAGAG' -b 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -b 'CTCTTCCGATCT' -B 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -B 'AGATCGGAAGAG' -B 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -B 'CTCTTCCGATCT' -o fastq/cutadapt_adapters/1QILAO_R1.fastq.gz -p fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_primers/1QILAO_R1.fastq.gz fastq/cutadapt_primers/1QILAO_R2.fastq.gz &> fastq/cutadapt_adapters/1QILAO.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 23:10:14 2021]
+Job 27: FastQC: fastq/cutadapt_primers/1QILAO_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/1QILAO_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/1QILAO_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/1QILAO_R1_fastqc.zip) fastq/cutadapt_primers/1QILAO_R1.fastq.gz &> fastqc/cutadapt_primers/1QILAO_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:15:06 2021]
+Finished job 15.
+23 of 66 steps (35%) done
+
+[Fri May 14 23:15:06 2021]
+Job 19: Cutadapt: 2QIFecal2
+Reason: Missing output files: fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz; Input files updated by another job: fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz, fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --max-n 0 --minimum-length 100 --pair-filter=any -b 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -b 'AGATCGGAAGAG' -b 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -b 'CTCTTCCGATCT' -B 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -B 'AGATCGGAAGAG' -B 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -B 'CTCTTCCGATCT' -o fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz -p fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz &> fastq/cutadapt_adapters/2QIFecal2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 23:15:06 2021]
+Job 33: FastQC: fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/2QIFecal2_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/2QIFecal2_R1_fastqc.zip) fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz &> fastqc/cutadapt_primers/2QIFecal2_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:15:06 2021]
+Job 35: FastQC: fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/2QIFecal2_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/2QIFecal2_R2_fastqc.zip) fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz &> fastqc/cutadapt_primers/2QIFecal2_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:15:39 2021]
+Finished job 16.
+24 of 66 steps (36%) done
+
+[Fri May 14 23:15:39 2021]
+Job 30: FastQC: fastq/cutadapt_primers/2QIMock_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/2QIMock_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/2QIMock_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/2QIMock_R1_fastqc.zip) fastq/cutadapt_primers/2QIMock_R1.fastq.gz &> fastqc/cutadapt_primers/2QIMock_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:15:39 2021]
+Job 18: Cutadapt: 2QIMock
+Reason: Missing output files: fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz; Input files updated by another job: fastq/cutadapt_primers/2QIMock_R1.fastq.gz, fastq/cutadapt_primers/2QIMock_R2.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --max-n 0 --minimum-length 100 --pair-filter=any -b 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -b 'AGATCGGAAGAG' -b 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -b 'CTCTTCCGATCT' -B 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -B 'AGATCGGAAGAG' -B 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -B 'CTCTTCCGATCT' -o fastq/cutadapt_adapters/2QIMock_R1.fastq.gz -p fastq/cutadapt_adapters/2QIMock_R2.fastq.gz fastq/cutadapt_primers/2QIMock_R1.fastq.gz fastq/cutadapt_primers/2QIMock_R2.fastq.gz &> fastq/cutadapt_adapters/2QIMock.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 23:15:39 2021]
+Job 28: FastQC: fastq/cutadapt_primers/2QIMock_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/2QIMock_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/2QIMock_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/2QIMock_R2_fastqc.zip) fastq/cutadapt_primers/2QIMock_R2.fastq.gz &> fastqc/cutadapt_primers/2QIMock_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:16:02 2021]
+Finished job 29.
+25 of 66 steps (38%) done
+[Fri May 14 23:16:02 2021]
+Finished job 24.
+26 of 66 steps (39%) done
+[Fri May 14 23:16:04 2021]
+Finished job 12.
+27 of 66 steps (41%) done
+
+[Fri May 14 23:16:04 2021]
+Job 26: FastQC: fastq/cutadapt_primers/1QIMock_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/1QIMock_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/1QIMock_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/1QIMock_R2_fastqc.zip) fastq/cutadapt_primers/1QIMock_R2.fastq.gz &> fastqc/cutadapt_primers/1QIMock_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:16:04 2021]
+Job 1: MultiQC (Cutadapt)
+Reason: Missing output files: multiqc/fastq/cutadapt_primers/multiqc_report.html; Input files updated by another job: fastq/cutadapt_primers/2QILAO_R2.fastq.gz, fastq/cutadapt_primers/1QIMock_R2.fastq.gz, fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz, fastq/cutadapt_primers/1QILAO_R2.fastq.gz, fastq/cutadapt_primers/1QIFecal2_R2.fastq.gz, fastq/cutadapt_primers/1QIMock_R1.fastq.gz, fastq/cutadapt_primers/2QIFecal2_R2.fastq.gz, fastq/cutadapt_primers/1QILAO_R1.fastq.gz, fastq/cutadapt_primers/2QIMock_R2.fastq.gz, fastq/cutadapt_primers/2QIMock_R1.fastq.gz, fastq/cutadapt_primers/2QILAO_R1.fastq.gz, fastq/cutadapt_primers/2QIFecal2_R1.fastq.gz
+
+multiqc --interactive -p -f -m cutadapt -o $(dirname multiqc/fastq/cutadapt_primers/multiqc_report.html) $(dirname fastq/cutadapt_primers/1QIFecal2_R1.fastq.gz) &> multiqc/fastq/cutadapt_primers/multiqc.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/91d78c4a
+
+[Fri May 14 23:16:04 2021]
+Job 20: Cutadapt: 1QIMock
+Reason: Missing output files: fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz; Input files updated by another job: fastq/cutadapt_primers/1QIMock_R1.fastq.gz, fastq/cutadapt_primers/1QIMock_R2.fastq.gz
+
+cutadapt -j 4 --quality-cutoff 25 --max-n 0 --minimum-length 100 --pair-filter=any -b 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -b 'AGATCGGAAGAG' -b 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -b 'CTCTTCCGATCT' -B 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' -B 'AGATCGGAAGAG' -B 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA' -B 'CTCTTCCGATCT' -o fastq/cutadapt_adapters/1QIMock_R1.fastq.gz -p fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_primers/1QIMock_R1.fastq.gz fastq/cutadapt_primers/1QIMock_R2.fastq.gz &> fastq/cutadapt_adapters/1QIMock.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/b8337cd1
+
+[Fri May 14 23:16:04 2021]
+Job 34: FastQC: fastq/cutadapt_primers/1QIMock_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_primers/1QIMock_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_primers/1QIMock_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_primers/1QIMock_R1_fastqc.zip) fastq/cutadapt_primers/1QIMock_R1.fastq.gz &> fastqc/cutadapt_primers/1QIMock_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:16:10 2021]
+Finished job 1.
+28 of 66 steps (42%) done
+[Fri May 14 23:16:48 2021]
+Finished job 32.
+29 of 66 steps (44%) done
+[Fri May 14 23:16:52 2021]
+Finished job 27.
+30 of 66 steps (45%) done
+[Fri May 14 23:16:56 2021]
+Finished job 31.
+31 of 66 steps (47%) done
+[Fri May 14 23:17:06 2021]
+Finished job 25.
+32 of 66 steps (48%) done
+[Fri May 14 23:23:26 2021]
+Finished job 33.
+33 of 66 steps (50%) done
+[Fri May 14 23:23:34 2021]
+Finished job 35.
+34 of 66 steps (52%) done
+[Fri May 14 23:24:36 2021]
+Finished job 28.
+35 of 66 steps (53%) done
+[Fri May 14 23:24:40 2021]
+Finished job 30.
+36 of 66 steps (55%) done
+[Fri May 14 23:25:09 2021]
+Finished job 34.
+37 of 66 steps (56%) done
+[Fri May 14 23:25:11 2021]
+Finished job 26.
+38 of 66 steps (58%) done
+
+[Fri May 14 23:25:11 2021]
+Job 6: MultiQC (FastQC): cutadapt_primers
+Reason: Missing output files: multiqc/fastqc/cutadapt_primers/multiqc_report.html; Input files updated by another job: fastqc/cutadapt_primers/2QILAO_R2_fastqc.zip, fastqc/cutadapt_primers/1QILAO_R2_fastqc.zip, fastqc/cutadapt_primers/1QIMock_R2_fastqc.zip, fastqc/cutadapt_primers/1QILAO_R1_fastqc.zip, fastqc/cutadapt_primers/2QIMock_R2_fastqc.zip, fastqc/cutadapt_primers/2QILAO_R1_fastqc.zip, fastqc/cutadapt_primers/2QIMock_R1_fastqc.zip, fastqc/cutadapt_primers/1QIFecal2_R1_fastqc.zip, fastqc/cutadapt_primers/1QIFecal2_R2_fastqc.zip, fastqc/cutadapt_primers/2QIFecal2_R1_fastqc.zip, fastqc/cutadapt_primers/1QIMock_R1_fastqc.zip, fastqc/cutadapt_primers/2QIFecal2_R2_fastqc.zip
+
+multiqc --interactive -p -f -m fastqc -o $(dirname multiqc/fastqc/cutadapt_primers/multiqc_report.html) $(dirname fastqc/cutadapt_primers/1QIFecal2_R1_fastqc.zip) &> multiqc/fastqc/cutadapt_primers/multiqc.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/91d78c4a
+[Fri May 14 23:25:25 2021]
+Finished job 6.
+39 of 66 steps (59%) done
+[Fri May 14 23:25:36 2021]
+Finished job 21.
+40 of 66 steps (61%) done
+
+[Fri May 14 23:25:36 2021]
+Job 51: FastQC: fastq/cutadapt_adapters/2QILAO_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/2QILAO_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/2QILAO_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/2QILAO_R1_fastqc.zip) fastq/cutadapt_adapters/2QILAO_R1.fastq.gz &> fastqc/cutadapt_adapters/2QILAO_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:25:36 2021]
+Job 58: FastQC: fastq/cutadapt_adapters/2QILAO_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/2QILAO_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/2QILAO_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/2QILAO_R2_fastqc.zip) fastq/cutadapt_adapters/2QILAO_R2.fastq.gz &> fastqc/cutadapt_adapters/2QILAO_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:26:48 2021]
+Finished job 23.
+41 of 66 steps (62%) done
+
+[Fri May 14 23:26:48 2021]
+Job 52: FastQC: fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/1QILAO_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/1QILAO_R1_fastqc.zip) fastq/cutadapt_adapters/1QILAO_R1.fastq.gz &> fastqc/cutadapt_adapters/1QILAO_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:26:48 2021]
+Job 59: FastQC: fastq/cutadapt_adapters/1QILAO_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/1QILAO_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/1QILAO_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/1QILAO_R2_fastqc.zip) fastq/cutadapt_adapters/1QILAO_R2.fastq.gz &> fastqc/cutadapt_adapters/1QILAO_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:27:02 2021]
+Finished job 22.
+42 of 66 steps (64%) done
+
+[Fri May 14 23:27:02 2021]
+Job 57: FastQC: fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/1QIFecal2_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/1QIFecal2_R2_fastqc.zip) fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz &> fastqc/cutadapt_adapters/1QIFecal2_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:27:02 2021]
+Job 55: FastQC: fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/1QIFecal2_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/1QIFecal2_R1_fastqc.zip) fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz &> fastqc/cutadapt_adapters/1QIFecal2_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:31:05 2021]
+Finished job 58.
+43 of 66 steps (65%) done
+[Fri May 14 23:31:11 2021]
+Finished job 51.
+44 of 66 steps (67%) done
+[Fri May 14 23:32:08 2021]
+Finished job 52.
+45 of 66 steps (68%) done
+[Fri May 14 23:32:23 2021]
+Finished job 59.
+46 of 66 steps (70%) done
+[Fri May 14 23:32:35 2021]
+Finished job 55.
+47 of 66 steps (71%) done
+[Fri May 14 23:32:41 2021]
+Finished job 57.
+48 of 66 steps (73%) done
+[Fri May 14 23:36:26 2021]
+Finished job 19.
+49 of 66 steps (74%) done
+
+[Fri May 14 23:36:26 2021]
+Job 50: FastQC: fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/2QIFecal2_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/2QIFecal2_R2_fastqc.zip) fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz &> fastqc/cutadapt_adapters/2QIFecal2_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:36:26 2021]
+Job 54: FastQC: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/2QIFecal2_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/2QIFecal2_R1_fastqc.zip) fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz &> fastqc/cutadapt_adapters/2QIFecal2_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:36:55 2021]
+Finished job 18.
+50 of 66 steps (76%) done
+
+[Fri May 14 23:36:55 2021]
+Job 56: FastQC: fastq/cutadapt_adapters/2QIMock_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/2QIMock_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/2QIMock_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/2QIMock_R2_fastqc.zip) fastq/cutadapt_adapters/2QIMock_R2.fastq.gz &> fastqc/cutadapt_adapters/2QIMock_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+
+[Fri May 14 23:36:55 2021]
+Job 53: FastQC: fastq/cutadapt_adapters/2QIMock_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/2QIMock_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/2QIMock_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/2QIMock_R1_fastqc.zip) fastq/cutadapt_adapters/2QIMock_R1.fastq.gz &> fastqc/cutadapt_adapters/2QIMock_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:38:47 2021]
+Finished job 20.
+51 of 66 steps (77%) done
+
+[Fri May 14 23:38:47 2021]
+Job 2: KRAKEN2: 2QILAO
+Reason: Missing output files: kraken2/2QILAO.kraken.summary.out; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+(date && kraken2 --threads 8 --db /mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/ --use-names --confidence 0.5 --paired fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/1QILAO_R1.fastq.gz fastq/cutadapt_adapters/1QIMock_R1.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/2QILAO_R1.fastq.gz fastq/cutadapt_adapters/2QIMock_R1.fastq.gz fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_adapters/2QIMock_R2.fastq.gz --gzip-compressed --output kraken2/2QILAO.kraken.summary.out --report kraken2/2QILAO.kraken.report.txt && date) &> kraken2/2QILAO.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/6e1ebaaa
+
+[Fri May 14 23:38:47 2021]
+Job 3: KRAKEN2: 1QIMock
+Reason: Missing output files: kraken2/1QIMock.kraken.summary.out; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+(date && kraken2 --threads 8 --db /mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/ --use-names --confidence 0.5 --paired fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/1QILAO_R1.fastq.gz fastq/cutadapt_adapters/1QIMock_R1.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/2QILAO_R1.fastq.gz fastq/cutadapt_adapters/2QIMock_R1.fastq.gz fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_adapters/2QIMock_R2.fastq.gz --gzip-compressed --output kraken2/1QIMock.kraken.summary.out --report kraken2/1QIMock.kraken.report.txt && date) &> kraken2/1QIMock.log
+
+Activating conda environment: /mnt/data/sbusi/vip/conda/6e1ebaaa
+[Fri May 14 23:38:47 2021]
+Job 9: KRAKEN2: 1QILAO
+Reason: Missing output files: kraken2/1QILAO.kraken.summary.out; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+(date && kraken2 --threads 8 --db /mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/ --use-names --confidence 0.5 --paired fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/1QILAO_R1.fastq.gz fastq/cutadapt_adapters/1QIMock_R1.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/2QILAO_R1.fastq.gz fastq/cutadapt_adapters/2QIMock_R1.fastq.gz fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_adapters/2QIMock_R2.fastq.gz --gzip-compressed --output kraken2/1QILAO.kraken.summary.out --report kraken2/1QILAO.kraken.report.txt && date) &> kraken2/1QILAO.log
+
+Activating conda environment: /mnt/data/sbusi/vip/conda/6e1ebaaa
+[Fri May 14 23:38:47 2021]
+Job 4: KRAKEN2: 1QIFecal2
+Reason: Missing output files: kraken2/1QIFecal2.kraken.summary.out; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+(date && kraken2 --threads 8 --db /mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/ --use-names --confidence 0.5 --paired fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/1QILAO_R1.fastq.gz fastq/cutadapt_adapters/1QIMock_R1.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/2QILAO_R1.fastq.gz fastq/cutadapt_adapters/2QIMock_R1.fastq.gz fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_adapters/2QIMock_R2.fastq.gz --gzip-compressed --output kraken2/1QIFecal2.kraken.summary.out --report kraken2/1QIFecal2.kraken.report.txt && date) &> kraken2/1QIFecal2.log
+
+Activating conda environment: /mnt/data/sbusi/vip/conda/6e1ebaaa
+[Fri May 14 23:38:47 2021]
+Job 11: KRAKEN2: 2QIMock
+Reason: Missing output files: kraken2/2QIMock.kraken.summary.out; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+(date && kraken2 --threads 8 --db /mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/ --use-names --confidence 0.5 --paired fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/1QILAO_R1.fastq.gz fastq/cutadapt_adapters/1QIMock_R1.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/2QILAO_R1.fastq.gz fastq/cutadapt_adapters/2QIMock_R1.fastq.gz fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_adapters/2QIMock_R2.fastq.gz --gzip-compressed --output kraken2/2QIMock.kraken.summary.out --report kraken2/2QIMock.kraken.report.txt && date) &> kraken2/2QIMock.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/6e1ebaaa
+[Fri May 14 23:43:00 2021]
+Finished job 50.
+52 of 66 steps (79%) done
+
+[Fri May 14 23:43:00 2021]
+Job 5: MultiQC (Cutadapt)
+Reason: Missing output files: multiqc/fastq/cutadapt_adapters/multiqc_report.html; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+multiqc --interactive -p -f -m cutadapt -o $(dirname multiqc/fastq/cutadapt_adapters/multiqc_report.html) $(dirname fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz) &> multiqc/fastq/cutadapt_adapters/multiqc.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/91d78c4a
+[Fri May 14 23:43:05 2021]
+Finished job 5.
+53 of 66 steps (80%) done
+
+[Fri May 14 23:43:05 2021]
+Job 49: FastQC: fastq/cutadapt_adapters/1QIMock_R2.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/1QIMock_R2_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/1QIMock_R2.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/1QIMock_R2_fastqc.zip) fastq/cutadapt_adapters/1QIMock_R2.fastq.gz &> fastqc/cutadapt_adapters/1QIMock_R2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:43:20 2021]
+Finished job 54.
+54 of 66 steps (82%) done
+
+[Fri May 14 23:43:20 2021]
+Job 48: FastQC: fastq/cutadapt_adapters/1QIMock_R1.fastq.gz
+Reason: Missing output files: fastqc/cutadapt_adapters/1QIMock_R1_fastqc.zip; Input files updated by another job: fastq/cutadapt_adapters/1QIMock_R1.fastq.gz
+
+fastqc -q -f fastq -t 2 -o $(dirname fastqc/cutadapt_adapters/1QIMock_R1_fastqc.zip) fastq/cutadapt_adapters/1QIMock_R1.fastq.gz &> fastqc/cutadapt_adapters/1QIMock_R1.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/2f1feac0
+[Fri May 14 23:44:00 2021]
+Finished job 56.
+55 of 66 steps (83%) done
+[Fri May 14 23:44:38 2021]
+Finished job 53.
+56 of 66 steps (85%) done
+[Fri May 14 23:51:06 2021]
+Finished job 49.
+57 of 66 steps (86%) done
+[Fri May 14 23:51:26 2021]
+Finished job 48.
+58 of 66 steps (88%) done
+
+[Fri May 14 23:51:26 2021]
+Job 10: KRAKEN2: 2QIFecal2
+Reason: Missing output files: kraken2/2QIFecal2.kraken.summary.out; Input files updated by another job: fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/1QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIMock_R2.fastq.gz, fastq/cutadapt_adapters/1QILAO_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz, fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R2.fastq.gz, fastq/cutadapt_adapters/2QIMock_R1.fastq.gz, fastq/cutadapt_adapters/2QILAO_R1.fastq.gz, fastq/cutadapt_adapters/1QILAO_R1.fastq.gz
+
+(date && kraken2 --threads 8 --db /mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/ --use-names --confidence 0.5 --paired fastq/cutadapt_adapters/1QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/1QILAO_R1.fastq.gz fastq/cutadapt_adapters/1QIMock_R1.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R1.fastq.gz fastq/cutadapt_adapters/2QILAO_R1.fastq.gz fastq/cutadapt_adapters/2QIMock_R1.fastq.gz fastq/cutadapt_adapters/1QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/1QILAO_R2.fastq.gz fastq/cutadapt_adapters/1QIMock_R2.fastq.gz fastq/cutadapt_adapters/2QIFecal2_R2.fastq.gz fastq/cutadapt_adapters/2QILAO_R2.fastq.gz fastq/cutadapt_adapters/2QIMock_R2.fastq.gz --gzip-compressed --output kraken2/2QIFecal2.kraken.summary.out --report kraken2/2QIFecal2.kraken.report.txt && date) &> kraken2/2QIFecal2.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/6e1ebaaa
+[Sat May 15 00:23:03 2021]
+Finished job 11.
+59 of 66 steps (89%) done
+
+[Sat May 15 00:23:03 2021]
+Job 8: MultiQC (FastQC): cutadapt_adapters
+Reason: Missing output files: multiqc/fastqc/cutadapt_adapters/multiqc_report.html; Input files updated by another job: fastqc/cutadapt_adapters/1QIMock_R1_fastqc.zip, fastqc/cutadapt_adapters/2QIFecal2_R2_fastqc.zip, fastqc/cutadapt_adapters/1QIMock_R2_fastqc.zip, fastqc/cutadapt_adapters/2QILAO_R1_fastqc.zip, fastqc/cutadapt_adapters/1QILAO_R1_fastqc.zip, fastqc/cutadapt_adapters/2QIFecal2_R1_fastqc.zip, fastqc/cutadapt_adapters/1QIFecal2_R1_fastqc.zip, fastqc/cutadapt_adapters/1QILAO_R2_fastqc.zip, fastqc/cutadapt_adapters/2QIMock_R2_fastqc.zip, fastqc/cutadapt_adapters/1QIFecal2_R2_fastqc.zip, fastqc/cutadapt_adapters/2QILAO_R2_fastqc.zip, fastqc/cutadapt_adapters/2QIMock_R1_fastqc.zip
+
+multiqc --interactive -p -f -m fastqc -o $(dirname multiqc/fastqc/cutadapt_adapters/multiqc_report.html) $(dirname fastqc/cutadapt_adapters/1QIFecal2_R1_fastqc.zip) &> multiqc/fastqc/cutadapt_adapters/multiqc.log
+Activating conda environment: /mnt/data/sbusi/vip/conda/91d78c4a
+[Sat May 15 00:23:21 2021]
+Finished job 8.
+60 of 66 steps (91%) done
+[Sat May 15 00:23:36 2021]
+Finished job 4.
+61 of 66 steps (92%) done
+[Sat May 15 00:23:43 2021]
+Finished job 3.
+62 of 66 steps (94%) done
+[Sat May 15 00:26:19 2021]
+Finished job 2.
+63 of 66 steps (95%) done
+[Sat May 15 00:29:00 2021]
+Finished job 9.
+64 of 66 steps (97%) done
+[Sat May 15 00:43:30 2021]
+Finished job 10.
+65 of 66 steps (98%) done
+
+[Sat May 15 00:43:30 2021]
+localrule all:
+    input: multiqc/fastqc/raw/multiqc_report.html, multiqc/fastqc/cutadapt_primers/multiqc_report.html, multiqc/fastqc/cutadapt_adapters/multiqc_report.html, multiqc/fastq/cutadapt_primers/multiqc_report.html, multiqc/fastq/cutadapt_adapters/multiqc_report.html, kraken2/1QIFecal2.kraken.summary.out, kraken2/1QILAO.kraken.summary.out, kraken2/1QIMock.kraken.summary.out, kraken2/2QIFecal2.kraken.summary.out, kraken2/2QILAO.kraken.summary.out, kraken2/2QIMock.kraken.summary.out
+    jobid: 0
+    reason: Input files updated by another job: multiqc/fastq/cutadapt_primers/multiqc_report.html, kraken2/2QILAO.kraken.summary.out, kraken2/1QIMock.kraken.summary.out, kraken2/1QIFecal2.kraken.summary.out, multiqc/fastq/cutadapt_adapters/multiqc_report.html, multiqc/fastqc/cutadapt_primers/multiqc_report.html, multiqc/fastqc/raw/multiqc_report.html, multiqc/fastqc/cutadapt_adapters/multiqc_report.html, kraken2/1QILAO.kraken.summary.out, kraken2/2QIFecal2.kraken.summary.out, kraken2/2QIMock.kraken.summary.out
+
+[Sat May 15 00:43:30 2021]
+Finished job 0.
+66 of 66 steps (100%) done
+Complete log: /mnt/data/sbusi/rashi_MG/libprep_analyses/.snakemake/log/2021-05-14T225010.238193.snakemake.log

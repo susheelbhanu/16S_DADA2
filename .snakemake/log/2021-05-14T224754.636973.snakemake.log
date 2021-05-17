@@ -1,0 +1,9 @@
+Building DAG of jobs...
+MissingInputException in line 40 of /mnt/data/sbusi/rashi_MG/libprep_analyses/workflow/Snakefile:
+Missing input files for rule all:
+kraken2/1QILAO.kraken.summary.out
+kraken2/1QIFecal2.kraken.summary.out
+kraken2/2QIMock.kraken.summary.out
+kraken2/2QILAO.kraken.summary.out
+kraken2/1QIMock.kraken.summary.out
+kraken2/2QIFecal2.kraken.summary.out
