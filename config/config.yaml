@@ -1,8 +1,8 @@
 # working directory (will include links to raw data, logs, results)
-workdir: "/mnt/data/sbusi/rashi_MG"
+workdir: "/mnt/data/sbusi/vip"
 
 # internal databases, i.e. created by the pipeline (external databases should be defined elsewhere)
-dbsdir: "/mnt/data/sbusi/rashi_MG"
+dbsdir: "/mnt/data/sbusi/vip"
 
 # samples: unique sample ID and R1/R2 FASTQ files (absolute paths)
 samples: "config/samples_metadata.tsv"
@@ -14,12 +14,12 @@ primer:
   reverse: "GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC"
   reverse_revcompl: "GGATTAGATACCCBDGTAGTCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC"
 
-# adapter sequences (to be adjusted as needed)
+# adapter sequences
 adapter:
-  forward1: "TACACTCTTTCCCTACACGACGCTCTTCCGATCT"
-  revcompl1: "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA"
-  forward2: "AGATCGGAAGAG"
-  revcompl2: "CTCTTCCGATCT"
+  forward1: "AGATCGGAAGAG"
+  forward2: "TGGAATTCTCGG"
+  revcompl1: "CTCTTCCGATCT"
+  revcompl2: "CCGAGAATTCCA"
 
 # https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 fastqc:
@@ -27,19 +27,19 @@ fastqc:
 
 # https://cutadapt.readthedocs.io/en/stable/
 cutadapt:
-  threads: 10
-  strategy: "TruSeq" # how to perform adapter trimming and filtering
-  adapters:
-    # From (document # 1000000002694, v15, February 2021)
-    # https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-15.pdf
-    # p28-29: Sequences for TruSeq Kits: Adapter Trimming
-    forward: "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
-    reverse: "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
-  # additional params
-  # min. length; trim Ns; 3' quality trimming
-  params: "--minimum-length 100 --trim-n --quality-cutoff 20"
+  threads: 4
+  min_length: 200
 
-#KRAKEN2
-kraken2:
-  db: "/mnt/esb-storage-01/NOMIS/maxikraken2_1903_140GB/"
-  threads: 8
+# https://www.bioconductor.org/packages/release/bioc/html/dada2.html
+dada2:
+  # fastq:
+  #   threads: 5
+  #   truncLen: [0, 287]
+  #   minLen: 275
+  asv:
+    threads_single: 1
+    threads: 5
+    pool: true # TRUE or pseudo  # TODO
+    minOverlap: 31  # see wiki for details
+    # https://zenodo.org/record/1172783#.XlZ__CmYXMJ (SILVA v.132)
+    tax: "https://zenodo.org/record/1172783/files/silva_nr_v132_train_set.fa.gz"

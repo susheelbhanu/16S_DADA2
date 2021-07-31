@@ -37,7 +37,7 @@ include:
     "rules/fastq.smk"
 
 include:
-    "rules/kraken2.smk"
+    "rules/asv.smk"
 
 # "Master" rule
 rule all:
@@ -51,8 +51,11 @@ rule all:
             "multiqc/fastq/{ftype}/multiqc_report.html",
             ftype=["cutadapt_primers", "cutadapt_adapters"]
         ),
-        # KRAKEN2
-        expand(
-            "kraken2/{sid}.kraken.summary.out",
-            sid=SAMPLES
-        )
+        # ASVs
+        [
+            "dada2/errormod.pdf",
+            "dada2/ASV.counts.tsv", "dada2/ASV.fasta", "dada2/ASV.tax.tsv", "dada2/ASV.stats.tsv",
+            "dada2/stats.pdf",
+            "dada2/ASV.krona.html",
+            "dada2/ASV.phyloseq.pdf"
+        ]

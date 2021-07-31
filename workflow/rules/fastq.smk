@@ -36,41 +36,46 @@ rule cutadapt_primers:
         primer_f=config["primer"]["forward"],
         primer_r_rc=config["primer"]["reverse_revcompl"],
         primer_r=config["primer"]["reverse"],
-        primer_f_rc=config["primer"]["forward_revcompl"]
+        primer_f_rc=config["primer"]["forward_revcompl"],
+        min_length=config["cutadapt"]["min_length"]
     conda:
         os.path.join(ENV_DIR, "cutadapt.yaml")
     message:
         "Cutadapt: {wildcards.sid}"
     shell:
         # parameters: see wiki for details
-        "cutadapt -j {threads} --pair-filter=any {config[cutadapt][params]} "
+        "cutadapt -j {threads} --quality-cutoff 25 --trim-n --minimum-length {params.min_length} --pair-filter=any "
         "-a '{params.primer_f}...{params.primer_r_rc}' -A '{params.primer_r}...{params.primer_f_rc}' "
         "-o {output.r1} -p {output.r2} {input.r1} {input.r2} &> {log}"
 
-if config["cutadapt"]["strategy"] == "TruSeq":
-    rule cutadapt_adapters:
-        input:
-            r1="fastq/cutadapt_primers/{sid}_R1.fastq.gz",
-            r2="fastq/cutadapt_primers/{sid}_R2.fastq.gz"
-        output:
-            r1="fastq/cutadapt_adapters/{sid}_R1.fastq.gz",
-            r2="fastq/cutadapt_adapters/{sid}_R2.fastq.gz"
-        log:
-            "fastq/cutadapt_adapters/{sid}.log"
-        wildcard_constraints:
-            sid="|".join(SAMPLES)
-        threads:
-            config["cutadapt"]["threads"]
-        conda:
-            os.path.join(ENV_DIR, "cutadapt.yaml")
-        message:
-            "Cutadapt: {wildcards.sid}"
-        shell:
-            "cutadapt -j {threads} --pair-filter=any {config[cutadapt][params]} "
-            # 3' adapters for R1 (-a) and R2 (-A)
-            "-a \"{config[cutadapt][adapters][forward]}\" -A \"{config[cutadapt][adapters][reverse]}\" "
-            "-o {output.r1} -p {output.r2} {input.r1} {input.r2} &> {log}"
-
+rule cutadapt_adapters:
+    input:
+        r1="fastq/cutadapt_primers/{sid}_R1.fastq.gz",
+        r2="fastq/cutadapt_primers/{sid}_R2.fastq.gz"
+    output:
+        r1="fastq/cutadapt_adapters/{sid}_R1.fastq.gz",
+        r2="fastq/cutadapt_adapters/{sid}_R2.fastq.gz"
+    log:
+        "fastq/cutadapt_adapters/{sid}.log"
+    wildcard_constraints:
+        sid="|".join(SAMPLES)
+    threads:
+        config["cutadapt"]["threads"]
+    params:
+        forward1=config["adapter"]["forward1"],
+        forward2=config["adapter"]["forward2"],
+        revcompl1=config["adapter"]["revcompl1"],
+        revcompl2=config["adapter"]["revcompl2"],
+        min_length=config["cutadapt"]["min_length"]
+    conda:
+        os.path.join(ENV_DIR, "cutadapt.yaml")
+    message:
+        "Cutadapt: {wildcards.sid}"
+    shell:
+        # parameters: see wiki for details
+        "cutadapt -j {threads} --quality-cutoff 25 --max-n 0 --minimum-length {params.min_length} --pair-filter=any "
+        "-b '{params.forward1}' -b '{params.forward2}' -b '{params.revcompl1}' -b '{params.revcompl2}' -B '{params.forward1}' -B '{params.forward2}' -B '{params.revcompl1}' -B '{params.revcompl2}' "
+        "-o {output.r1} -p {output.r2} {input.r1} {input.r2} &> {log}"
 
 ##################################################
 # QC

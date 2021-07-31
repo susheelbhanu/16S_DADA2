@@ -1,4 +1,0 @@
-KeyError in line 40 of /mnt/data/sbusi/rashi_MG/libprep_analyses/workflow/rules/fastq.smk:
-'min_length'
-  File "/mnt/data/sbusi/rashi_MG/libprep_analyses/workflow/Snakefile", line 37, in <module>
-  File "/mnt/data/sbusi/rashi_MG/libprep_analyses/workflow/rules/fastq.smk", line 40, in <module>
